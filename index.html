@@ -1,0 +1,1219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Shreya Rastogi | Portfolio</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-color: #00b4d8;
+        --bg-dark: rgba(11, 12, 16, 0.7);
+        --bg-card: rgba(31, 40, 51, 0.85);
+        --text-main: #ffffff;
+        --text-muted: #c5a880;
+        --text-body: #e0e0e0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-main);
+        line-height: 1.6;
+        background-color: #0b0c10;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Play", sans-serif;
+        letter-spacing: 1px;
+      }
+
+      /* =====================================================
+           BACKGROUND VIDEO
+        ===================================================== */
+
+      .video-bg-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .video-bg-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: contrast(1.1) brightness(1.05);
+      }
+
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(11, 12, 16, 0.5), rgba(5, 5, 7, 0.7));
+      }
+
+      /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        background-color: rgba(11, 12, 16, 0.9);
+
+        padding: 20px 10%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        z-index: 1000;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+        backdrop-filter: blur(5px);
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: #00b4d8;
+        text-transform: uppercase;
+      }
+
+      .logo span {
+        color: var(--primary-color);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 30px;
+      }
+
+      nav ul li a {
+        color: var(--text-main);
+        text-decoration: none;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: var(--primary-color);
+      }
+
+      /* =====================================================
+           HOME
+        ===================================================== */
+
+      #home {
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+
+        padding: 0 20px;
+
+        background: transparent;
+      }
+
+      .hero-tag {
+        color: var(--primary-color);
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      #home h1 {
+        font-size: 4rem;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-weight: 700;
+
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      }
+
+      #home p {
+        font-size: 1.2rem;
+        max-width: 800px;
+
+        color: var(--text-body);
+
+        margin-bottom: 35px;
+
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      }
+
+      /* =====================================================
+           BUTTON
+        ===================================================== */
+
+      .btn {
+        width: 160px;
+        height: 50px;
+
+        border-radius: 999px;
+
+        display: inline-block;
+
+        padding: 12px 6px;
+
+        background-color: transparent;
+
+        color: var(--text-main);
+
+        border: 2px solid var(--primary-color);
+
+        text-decoration: none;
+
+        text-transform: uppercase;
+
+        font-weight: 600;
+
+        font-size: 13px;
+
+        letter-spacing: 2px;
+
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-color);
+
+        color: #000;
+
+        box-shadow: 0 0 15px rgba(0, 180, 216, 0.4);
+      }
+
+      /* =====================================================
+           COMMON SECTIONS
+        ===================================================== */
+
+      section {
+        padding: 100px 10%;
+        background-color: transparent;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+
+        text-transform: uppercase;
+
+        position: relative;
+
+        display: inline-block;
+
+        padding-bottom: 15px;
+      }
+
+      .section-title h2::after {
+        content: "";
+
+        position: absolute;
+
+        bottom: 0;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        width: 60px;
+
+        height: 3px;
+
+        background-color: var(--primary-color);
+      }
+
+      /* =====================================================
+           ABOUT
+        ===================================================== */
+
+      .about-container {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+      .about-text p {
+        color: var(--text-body);
+
+        font-size: 1.1rem;
+
+        margin-bottom: 30px;
+
+        text-align: center;
+
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+      }
+
+      /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+      .education-box {
+        background-color: var(--bg-card);
+
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        border-top: 4px solid transparent;
+
+        padding: 30px;
+
+        border-radius: 4px;
+
+        max-width: 600px;
+
+        margin: 0 auto;
+
+        backdrop-filter: blur(10px);
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+        transition: all 0.3s ease;
+      }
+
+      .education-box:hover {
+        transform: translateY(-10px);
+
+        border-top: 4px solid #00aaff;
+      }
+
+      .education-box h3 {
+        color: var(--primary-color);
+
+        margin-bottom: 10px;
+      }
+
+      .edu-meta {
+        display: flex;
+
+        justify-content: space-between;
+
+        color: var(--text-muted);
+
+        margin-bottom: 15px;
+
+        font-size: 0.9rem;
+
+        font-weight: 600;
+      }
+
+      /* =====================================================
+           SKILLS
+        ===================================================== */
+
+      .skills-grid {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+        gap: 25px;
+      }
+
+      .skill-card {
+        background-color: var(--bg-card);
+
+        padding: 30px;
+
+        border-top: 3px solid transparent;
+
+        border-radius: 4px;
+
+        backdrop-filter: blur(10px);
+
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+        transition: all 0.3s;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-5px);
+
+        border-top-color: var(--primary-color);
+
+        background-color: rgba(31, 40, 51, 0.95);
+      }
+
+      .skill-card i {
+        font-size: 2rem;
+
+        color: var(--primary-color);
+
+        margin-bottom: 20px;
+      }
+
+      .skill-card h3 {
+        margin-bottom: 15px;
+
+        font-size: 1.2rem;
+
+        text-transform: uppercase;
+      }
+
+      .skill-card p {
+        color: var(--text-body);
+
+        font-size: 0.95rem;
+      }
+
+      /* =====================================================
+           EXPERIENCE
+        ===================================================== */
+
+      .timeline {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 30px;
+      }
+
+      .timeline-item {
+        background-color: var(--bg-card);
+
+        padding: 30px;
+
+        border-left: 4px solid transparent;
+
+        border-radius: 0 6px 6px 0;
+
+        backdrop-filter: blur(10px);
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+        transition: all 0.3s ease;
+      }
+
+      .timeline-item:hover {
+        transform: translateY(-10px);
+
+        border-left: 4px solid #00aaff;
+
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      }
+
+      .timeline-header {
+        display: flex;
+
+        justify-content: space-between;
+
+        flex-wrap: wrap;
+
+        margin-bottom: 15px;
+      }
+
+      .timeline-header h3 {
+        font-size: 1.4rem;
+      }
+
+      .company {
+        color: var(--primary-color);
+
+        font-weight: 600;
+      }
+
+      .date {
+        color: var(--text-muted);
+
+        font-weight: 600;
+      }
+
+      .timeline-item ul {
+        list-style-type: none;
+      }
+
+      .timeline-item ul li {
+        position: relative;
+
+        padding-left: 20px;
+
+        margin-bottom: 10px;
+
+        color: var(--text-body);
+      }
+
+      .timeline-item ul li::before {
+        content: "→";
+
+        position: absolute;
+
+        left: 0;
+
+        color: var(--primary-color);
+      }
+
+      /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+      .projects-grid {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+        gap: 30px;
+      }
+
+      .project-card {
+        background-color: var(--bg-card);
+
+        border-radius: 6px;
+
+        overflow: hidden;
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        border-top: 6px solid transparent;
+
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+
+        display: flex;
+
+        flex-direction: column;
+
+        backdrop-filter: blur(10px);
+
+        transition: all 0.35s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px) scale(1.02);
+
+        background-color: rgba(31, 40, 51, 0.95);
+
+        border-top: 4px solid #00a8ff;
+
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      }
+
+      .project-img {
+        height: 200px;
+
+        background-color: rgba(17, 17, 17, 0.6);
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        border-bottom: 2px solid var(--primary-color);
+
+        overflow: hidden;
+      }
+
+      .project-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .project-info {
+        padding: 25px;
+
+        flex-grow: 1;
+
+        display: flex;
+
+        flex-direction: column;
+      }
+
+      .project-info h3 {
+        font-size: 1.3rem;
+
+        margin-bottom: 12px;
+
+        color: var(--text-main);
+      }
+
+      .project-info p {
+        color: var(--text-body);
+
+        font-size: 0.95rem;
+
+        margin-bottom: 10px;
+      }
+
+      .project-tech {
+        color: var(--primary-color) !important;
+
+        font-size: 0.85rem !important;
+
+        font-weight: 600;
+
+        margin-top: 5px;
+      }
+
+      /* =====================================================
+           PROJECT BUTTONS
+        ===================================================== */
+
+      .project-buttons {
+        display: flex;
+
+        gap: 12px;
+
+        margin-top: auto;
+
+        padding-top: 20px;
+
+        flex-wrap: wrap;
+      }
+
+      .project-btn {
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        padding: 10px 18px;
+
+        border: 1px solid var(--primary-color);
+
+        border-radius: 25px;
+
+        color: var(--text-main);
+
+        text-decoration: none;
+
+        font-size: 12px;
+
+        font-weight: 600;
+
+        text-transform: uppercase;
+
+        letter-spacing: 1px;
+
+        transition: all 0.3s ease;
+      }
+
+      .project-btn:hover {
+        background-color: var(--primary-color);
+
+        color: #000;
+
+        transform: translateY(-2px);
+
+        box-shadow: 0 0 12px rgba(0, 180, 216, 0.4);
+      }
+
+      /* =====================================================
+           FOOTER
+        ===================================================== */
+
+      footer {
+        background-color: rgba(5, 5, 7, 0.95);
+
+        padding: 60px 10% 30px 10%;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+        backdrop-filter: blur(10px);
+      }
+
+      .footer-content {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+        gap: 40px;
+
+        margin-bottom: 40px;
+      }
+
+      .footer-box h3 {
+        font-size: 1.4rem;
+
+        margin-bottom: 20px;
+
+        text-transform: uppercase;
+
+        color: var(--text-main);
+      }
+
+      .footer-box p {
+        color: var(--text-body);
+
+        margin-bottom: 10px;
+      }
+
+      .footer-box a {
+        color: var(--text-body);
+
+        text-decoration: none;
+
+        transition: color 0.3s;
+      }
+
+      .footer-box a:hover {
+        color: var(--primary-color);
+      }
+
+      .social-links a {
+        display: inline-block;
+
+        width: 40px;
+
+        height: 40px;
+
+        line-height: 40px;
+
+        background-color: rgba(31, 40, 51, 0.6);
+
+        color: var(--text-main);
+
+        text-align: center;
+
+        border-radius: 50%;
+
+        margin-right: 10px;
+
+        transition: all 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary-color);
+
+        color: #000;
+
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        text-align: center;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+        padding-top: 20px;
+
+        color: rgba(255, 255, 255, 0.3);
+
+        font-size: 0.85rem;
+      }
+
+      /* =====================================================
+           RESPONSIVE DESIGN
+        ===================================================== */
+
+      @media (max-width: 768px) {
+        header {
+          padding: 20px 5%;
+        }
+
+        nav ul {
+          display: none;
+        }
+
+        section {
+          padding: 80px 5%;
+        }
+
+        #home h1 {
+          font-size: 2.8rem;
+        }
+
+        .edu-meta {
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        .timeline-header {
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        .project-buttons {
+          flex-direction: column;
+        }
+
+        .project-btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =====================================================
+         BACKGROUND VIDEO
+    ====================================================== -->
+
+    <div class="video-bg-container">
+      <video autoplay loop muted playsinline>
+        <source src="background.mp4" type="video/mp4" />
+
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="video-overlay"></div>
+    </div>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header>
+      <div class="logo">SHREYA <span>RASTOGI</span></div>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="#home">Home</a>
+          </li>
+
+          <li>
+            <a href="#about">About</a>
+          </li>
+
+          <li>
+            <a href="#skills">Skills</a>
+          </li>
+
+          <li>
+            <a href="#experience">Experience</a>
+          </li>
+
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- =====================================================
+         HOME
+    ====================================================== -->
+
+    <section id="home">
+      <div class="hero-tag"></div>
+
+      <h1>SHREYA RASTOGI</h1>
+
+      <p>
+        Software Developer | Python | Django | Machine Learning | Data
+        Structures & Algorithms
+      </p>
+
+      <a href="#projects" class="btn"> View My Work </a>
+    </section>
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section id="about">
+      <div class="section-title">
+        <h2>PROFESSIONAL SUMMARY</h2>
+      </div>
+
+      <div class="about-container">
+        <div class="about-text">
+          <p>
+            Software Developer with a Bachelor of Computer Applications and
+            hands-on experience in Python, Django, REST APIs, JavaScript, SQL,
+            and Machine Learning. Strong foundation in Data Structures and
+            Algorithms, Object-Oriented Program- ming, DBMS, and Operating
+            Systems. Experienced in developing AI-powered applications using
+            Python, NumPy, Pandas, Seaborn. Strong problem-solving skills with
+            practical experience in Git, GitHub, and Visual Studio Code
+          </p>
+        </div>
+
+        <!-- EDUCATION -->
+
+        <div class="education-box">
+          <div class="section-title" style="margin-bottom: 20px">
+            <h3 style="text-transform: uppercase">EDUCATION</h3>
+          </div>
+
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+
+          <div class="edu-meta">
+            <span> Goel Institute of Higher Studies, Lucknow </span>
+
+            <span> 2023 - 2026 </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SKILLS
+    ====================================================== -->
+
+    <section id="skills">
+      <div class="section-title">
+        <h2>TECHNICAL SKILLS</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fa-solid fa-code"></i>
+
+          <h3>Programming Languages</h3>
+
+          <p>Python, C++, JavaScript</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-globe"></i>
+
+          <h3>Web Technologies</h3>
+
+          <p>HTML5, CSS3, JavaScript</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-database"></i>
+
+          <h3>Database</h3>
+
+          <p>MySQL, SQL, DBMS</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-cubes"></i>
+
+          <h3>Backend Development</h3>
+
+          <p>Django, REST APIs, CRUD Operations</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-chart-line"></i>
+
+          <h3>Machine Learning</h3>
+
+          <p>NumPy, Pandas, Seaborn</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+
+          <h3>Tools</h3>
+
+          <p>Git, GitHub, Visual Studio Code, Jupyter Notebook</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+
+          <h3>AI and Computer Vision</h3>
+
+          <p>YOLO, OpenCV</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+
+          <h3>Core CS</h3>
+
+          <p>Data Structures and Algorithms, OOP, DBMS, Operating Systems</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         EXPERIENCE
+    ====================================================== -->
+
+    <section id="experience">
+      <div class="section-title">
+        <h2>EXPERIENCE</h2>
+      </div>
+
+      <div class="timeline">
+        <!-- CODEMENTEES -->
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3>Data Structures and Algorithms Trainee</h3>
+
+            <span class="company"> Codementees, Lucknow </span>
+
+            <span class="date"> December 2025 - Present </span>
+          </div>
+
+          <ul>
+            <li>Learning C++ and Data Structures and Algorithms (DSA).</li>
+
+            <li>
+              Actively Learning C++, Practicing algorithmic problem-solving,
+              logical thinking and writing efficient solutions.
+            </li>
+          </ul>
+        </div>
+
+        <!-- WEBCOS -->
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3>Python Trainee</h3>
+
+            <span class="company"> Webcos Software Solution, Lucknow </span>
+
+            <span class="date"> June 2025 - October 2025 </span>
+          </div>
+
+          <ul>
+            <li>
+              Completed hands-on training in Python programming, covering
+              variables, data types, conditional statements, loops, func- tions,
+              Object-Oriented Programming, exception handling, file handling,
+              and problem-solving
+            </li>
+            <li>
+              Gained practical experience with NumPy, Pandas, and Seaborn for
+              data preprocessing, data manipulation, analysis, and
+              visualization.
+            </li>
+          </ul>
+        </div>
+
+        <!-- WEBCOS -->
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3>Web Development Trainee</h3>
+
+            <span class="company"> Webcos Software Solution, Lucknow </span>
+
+            <span class="date"> June 2025 - August 2025 </span>
+          </div>
+
+          <ul>
+            <li>
+              Completed hands-on training in web development using HTML5, CSS3,
+              and JavaScript to build responsive and user- friendly web
+              interfaces.
+            </li>
+            <li>
+              Gained practical experience using Git, GitHub, and Visual Studio
+              Code as part of the software development workflow.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PROJECTS
+    ====================================================== -->
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>PROJECTS</h2>
+      </div>
+
+      <div class="projects-grid">
+        <!-- =================================================
+                 FIRE DETECTION PROJECT
+            ================================================== -->
+
+        <div class="project-card">
+          <div class="project-img">
+            <img
+              src="https://images.unsplash.com/photo-1507048947301-7afc2aca0edc?auto=format&fit=crop&w=1200&q=85"
+              alt="Fire Detection AI"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+
+          <div class="project-info">
+            <h3>Fire Detection AI</h3>
+
+            <p>
+              Developed a real-time fire detection application using computer
+              vision and HSV-based color analysis.
+            </p>
+
+            <p>
+              Implemented live browser-camera processing using Streamlit WebRTC
+              and added visual fire detection alerts.
+            </p>
+
+            <p class="project-tech">
+              Python • OpenCV • NumPy • Streamlit • WebRTC
+            </p>
+
+            <!-- PROJECT BUTTONS -->
+
+            <div class="project-buttons">
+              <a
+                href="https://fire-detection-ai.streamlit.app/"
+                target="_blank"
+                class="project-btn"
+              >
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                Live Demo
+              </a>
+
+              <a
+                href="https://github.com/rastogishreya1605/Fire-Detection"
+                target="_blank"
+                class="project-btn"
+              >
+                <i class="fa-brands fa-github"></i>
+
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================================================
+                 HEART DISEASE PROJECT
+            ================================================== -->
+
+        <div class="project-card">
+          <div class="project-img">
+            <img
+              src="https://images.unsplash.com/photo-1460672985063-6764ac8b9c74?auto=format&fit=crop&w=600&q=80"
+              alt="Heart Disease Detection System"
+            />
+          </div>
+
+          <div class="project-info">
+            <h3>Heart Disease Detection System</h3>
+
+            <p>
+              Developed a machine learning based system to predict heart disease
+              risk using patient health data.
+            </p>
+
+            <p>
+              Built a user-friendly interface using Python and data analysis
+              libraries.
+            </p>
+
+            <p class="project-tech">
+              Python • Pandas • NumPy • Matplotlib • Machine Learning
+            </p>
+
+            <div class="project-buttons">
+              <a
+                href="https://github.com/rastogishreya1605"
+                target="_blank"
+                class="project-btn"
+              >
+                <i class="fa-brands fa-github"></i>
+
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         FOOTER / CONTACT
+    ====================================================== -->
+
+    <footer id="contact">
+      <div class="footer-content">
+        <div class="footer-box">
+          <h3>Contact Info</h3>
+
+          <p>
+            <i
+              class="fa-solid fa-envelope"
+              style="color: var(--primary-color); margin-right: 10px"
+            >
+            </i>
+
+            <a href="mailto:rastogishreya922@gmail.com">
+              rastogishreya922@gmail.com
+            </a>
+          </p>
+
+          <p>
+            <i
+              class="fa-solid fa-phone"
+              style="color: var(--primary-color); margin-right: 10px"
+            >
+            </i>
+
+            +91 7268880590
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Profiles</h3>
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/shreya-rastogi-1465b1364"
+              target="_blank"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/rastogishreya1605" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
